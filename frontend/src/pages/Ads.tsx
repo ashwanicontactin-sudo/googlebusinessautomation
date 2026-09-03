@@ -6,17 +6,19 @@ import "../styles/ads.css";
 export default function Ads() {
   const [ads, setAds] = useState<AdCampaign[]>([]);
   const [keywords, setKeywords] = useState<Keyword[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/v1/ads")
-      .then((res) => res.json())
-      .then(setAds)
-      .catch(console.error);
-
-    fetch("/api/v1/ads/keywords")
-      .then((res) => res.json())
-      .then(setKeywords)
-      .catch(console.error);
+    Promise.all([
+      fetch("/api/v1/ads").then((res) => res.json()),
+      fetch("/api/v1/ads/keywords").then((res) => res.json()),
+    ])
+      .then(([campaigns, keywordList]) => {
+        setAds(campaigns);
+        setKeywords(keywordList);
+      })
+      .catch(console.error)
+      .finally(() => setLoading(false));
   }, []);
 
   const handleLaunch = (id: number) => {
@@ -47,6 +49,7 @@ export default function Ads() {
 
       <div className="win95-section">
         <h3 className="win95-title-bar">Your Ad Campaigns</h3>
+        {loading && <p>Loading campaigns...</p>}
         <div className="win95-table-container">
           <table className="win95-table">
             <thead>

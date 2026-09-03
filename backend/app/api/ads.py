@@ -75,7 +75,7 @@ async def list_ads() -> list[AdCampaignResponse]:
     return list(mock_ads.values())
 
 
-@router.get("/{ad_id}", response_model=AdCampaignResponse)
+@router.get("/{ad_id:int}", response_model=AdCampaignResponse)
 async def get_ad(ad_id: int) -> AdCampaignResponse:
     """Get a single ad campaign."""
     if ad_id not in mock_ads:

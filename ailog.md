@@ -129,3 +129,9 @@ This file tracks AI-assisted development decisions, model interactions, and lear
 - Added stable public slugs and `/listing/:slug` profile pages with contact, location, logo, and SEO content.
 - Kept external directories as optional distribution channels rather than the primary destination.
 - Added separate business-owner and developer onboarding choices and optional listing logo input.
+
+## [2026-09-03] Data and API Reliability
+
+- Fixed Vite API proxy configuration and dynamic FastAPI route collisions that caused data pages to appear empty.
+- Confirmed the project uses SQLAlchemy/PostgreSQL configuration; Prisma and Supabase are not installed or required.
+- Added baseline API security headers and explicit CORS method/header allowlists.

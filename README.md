@@ -104,6 +104,16 @@ googlebusinessautomation/
 
 ## Getting Started
 
+### Database choice
+
+The backend uses SQLAlchemy 2.0 with PostgreSQL, provided by Docker Compose.
+Prisma is a Node.js ORM and Supabase is a hosted PostgreSQL platform; neither is
+needed alongside this Python data layer. Configure `.env` and run
+`docker compose up --build`.
+
+The Vite development server proxies `/api` requests to FastAPI on port 8000, so
+frontend pages can load backend data during local development.
+
 ### Prerequisites
 
 - Python 3.12+

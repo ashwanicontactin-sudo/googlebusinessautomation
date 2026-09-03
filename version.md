@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added visible account registration and a four-step listing submission wizard.
 - Added first-party public listing pages with stable shareable URLs and dashboard links.
 - Added business-owner and developer account types plus logo customization in listing setup.
+- Added API security response headers and restrictive CORS allowlists.
 
 ### Added
 - Google OAuth and Meta OAuth entry points for Facebook/Instagram sign-in.

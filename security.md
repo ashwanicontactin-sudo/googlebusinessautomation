@@ -9,6 +9,16 @@
 
 ## Security Considerations
 
+The API now adds `X-Content-Type-Options`, `X-Frame-Options`,
+`Referrer-Policy`, and a restrictive `Permissions-Policy` header. CORS methods
+and headers are explicitly allowlisted. Keep the Caddy proxy in front of the
+application for HTTPS and rate limiting.
+
+The current demo auth and business routes use in-memory mock storage. Before
+production, replace dummy tokens with hashed-password/OAuth verification,
+persist records in PostgreSQL, encrypt provider credentials, and add CSRF,
+audit logging, account authorization, and migration management.
+
 ### 1. Secrets Management
 - **Never commit `.env` to version control.** The `.env` file is already in `.gitignore`.
 - Use `.env.example` as a template and fill in real values locally.

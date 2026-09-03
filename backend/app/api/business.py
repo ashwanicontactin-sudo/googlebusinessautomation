@@ -89,7 +89,7 @@ async def list_businesses(skip: int = 0, limit: int = 100) -> list[BusinessRespo
     return businesses
 
 
-@router.get("/{business_id}", response_model=BusinessResponse)
+@router.get("/{business_id:int}", response_model=BusinessResponse)
 async def get_business(business_id: int) -> BusinessResponse:
     """Get a single business by ID."""
     if business_id not in mock_businesses:
@@ -124,7 +124,7 @@ async def create_business(business: BusinessCreate) -> BusinessResponse:
     return new_business
 
 
-@router.patch("/{business_id}", response_model=BusinessResponse)
+@router.patch("/{business_id:int}", response_model=BusinessResponse)
 async def update_business(business_id: int, update: BusinessUpdate) -> BusinessResponse:
     """Update an existing business listing."""
     if business_id not in mock_businesses:
@@ -138,7 +138,7 @@ async def update_business(business_id: int, update: BusinessUpdate) -> BusinessR
     return updated
 
 
-@router.delete("/{business_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/{business_id:int}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_business(business_id: int) -> None:
     """Delete a business listing."""
     if business_id not in mock_businesses:

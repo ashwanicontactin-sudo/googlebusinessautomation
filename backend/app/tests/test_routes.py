@@ -12,6 +12,7 @@ class TestHealthCheck:
         response = client.get("/api/v1/health" if False else "/health")
         assert response.status_code == 200
         assert response.json()["status"] == "healthy"
+        assert response.headers["x-content-type-options"] == "nosniff"
 
 
 class TestBusinessRoutes:
@@ -64,6 +65,12 @@ class TestAuthRoutes:
         response = client.get("/api/v1/auth/oauth/google")
         assert response.status_code == 503
         assert "not configured" in response.json()["detail"]
+
+    def test_keyword_route_is_not_captured_by_ad_id(self) -> None:
+        client = TestClient(app)
+        response = client.get("/api/v1/ads/keywords")
+        assert response.status_code == 200
+        assert response.json()[0]["keyword"] == "restaurant"
 
 
 class TestListingRoutes:
