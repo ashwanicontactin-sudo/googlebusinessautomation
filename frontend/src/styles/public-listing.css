@@ -1,0 +1,9 @@
+.win95-public-listing { max-width: 820px; margin: 0 auto; }
+.win95-public-hero { display: flex; gap: 1rem; align-items: center; padding: 1.25rem; margin-bottom: 1rem; background: #fff; border: 3px ridge #c0c0c0; }
+.win95-public-hero img { width: 96px; height: 96px; object-fit: contain; border: 2px inset #c0c0c0; }
+.win95-public-hero h1 { margin: 0.2rem 0; font-size: 2rem; }
+.win95-public-category { color: var(--win95-title-bar-bg); font-weight: 700; }
+.win95-public-section { margin-top: 1rem; padding-bottom: 1rem; }
+.win95-public-section p { margin: 0.65rem 0; }
+.win95-public-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+.win95-public-tags span { padding: 0.3rem 0.5rem; background: var(--win95-title-bar-bg); color: #fff; }

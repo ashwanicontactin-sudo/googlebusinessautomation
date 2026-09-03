@@ -122,3 +122,9 @@ This file tracks AI-assisted development decisions, model interactions, and lear
 - Added Google OAuth and Meta OAuth entry points for Facebook/Instagram identity.
 - Added environment variables for provider client IDs and callback URLs.
 - Added login-page social buttons with a clear configuration error when OAuth credentials are absent.
+
+## [2026-09-03] First-Party Public Listings
+
+- Changed the listing workflow to publish each business on this platform first.
+- Added stable public slugs and `/listing/:slug` profile pages with contact, location, logo, and SEO content.
+- Kept external directories as optional distribution channels rather than the primary destination.

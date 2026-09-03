@@ -35,6 +35,7 @@ export default function Businesses() {
               <th>Plan</th>
               <th>Phone</th>
               <th>Media</th>
+              <th>Public listing</th>
             </tr>
           </thead>
           <tbody>
@@ -54,6 +55,9 @@ export default function Businesses() {
                 <td>{b.phone || "-"}</td>
                 <td>
                   <a href={`/businesses/${b.id}/media`} className="win95-button-small">Media</a>
+                </td>
+                <td>
+                  {b.public_slug ? <a href={`/listing/${b.public_slug}`} className="win95-button-small">Open listing</a> : "-"}
                 </td>
               </tr>
             ))}

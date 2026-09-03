@@ -10,6 +10,7 @@ import Analytics from "./pages/Analytics";
 import AnalyticsConfig from "./pages/AnalyticsConfig";
 import HtmlAdBuilder from "./pages/HtmlAdBuilder";
 import MediaGallery from "./components/MediaGallery";
+import PublicListing from "./pages/PublicListing";
 import "./styles/app.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/businesses" element={<Businesses />} />
         <Route path="/businesses/:businessId/media" element={<BusinessMedia />} />
+        <Route path="/listing/:slug" element={<PublicListing />} />
         <Route path="/platforms" element={<Platforms />} />
         <Route path="/submit" element={<SubmitListing />} />
         <Route path="/ads" element={<Ads />} />

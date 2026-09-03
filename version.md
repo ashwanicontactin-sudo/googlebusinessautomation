@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the business record is created.
 - Added Apple Business Connect to supported listing platforms.
 - Added visible account registration and a four-step listing submission wizard.
+- Added first-party public listing pages with stable shareable URLs and dashboard links.
 
 ### Added
 - Google OAuth and Meta OAuth entry points for Facebook/Instagram sign-in.

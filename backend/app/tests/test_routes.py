@@ -21,6 +21,25 @@ class TestBusinessRoutes:
         assert response.status_code == 200
         assert response.json() == []
 
+    def test_created_business_has_public_listing_slug(self) -> None:
+        client = TestClient(app)
+        response = client.post(
+            "/api/v1/businesses/",
+            json={
+                "name": "Demo Cafe",
+                "address": "1 Main Street",
+                "city": "Pune",
+                "state": "Maharashtra",
+                "postal_code": "411001",
+            },
+        )
+        assert response.status_code == 201
+        assert response.json()["public_slug"] == "demo-cafe-1"
+
+        public_response = client.get("/api/v1/businesses/public/demo-cafe-1")
+        assert public_response.status_code == 200
+        assert public_response.json()["name"] == "Demo Cafe"
+
 
 class TestAuthRoutes:
     def test_login(self) -> None:

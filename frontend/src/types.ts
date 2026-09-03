@@ -16,6 +16,9 @@ export interface Business {
   keywords?: string[];
   is_paid?: boolean;
   plan_tier?: string;
+  logo_url?: string;
+  published?: boolean;
+  public_slug?: string;
 }
 
 export interface Platform {

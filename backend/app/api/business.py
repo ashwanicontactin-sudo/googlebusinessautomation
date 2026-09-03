@@ -5,6 +5,7 @@ Business endpoint routes.
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Optional
+import re
 
 
 class BusinessBase(BaseModel):
@@ -34,6 +35,8 @@ class BusinessBase(BaseModel):
     plan_tier: str = Field(
         default="free", description="Subscription tier: free, premium, enterprise"
     )
+    logo_url: Optional[str] = None
+    published: bool = True
 
 
 class BusinessCreate(BusinessBase):
@@ -57,10 +60,13 @@ class BusinessUpdate(BaseModel):
     keywords: Optional[list[str]] = None
     is_paid: Optional[bool] = None
     plan_tier: Optional[str] = None
+    logo_url: Optional[str] = None
+    published: Optional[bool] = None
 
 
 class BusinessResponse(BusinessBase):
     id: int
+    public_slug: str
     model_config = ConfigDict(from_attributes=True)
 
 
@@ -68,6 +74,12 @@ router = APIRouter()
 
 mock_businesses: dict[int, BusinessResponse] = {}
 next_id = 1
+
+
+def make_slug(name: str, business_id: int) -> str:
+    """Create a stable, URL-safe public listing identifier."""
+    base = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "business"
+    return f"{base}-{business_id}"
 
 
 @router.get("/", response_model=list[BusinessResponse])
@@ -87,11 +99,26 @@ async def get_business(business_id: int) -> BusinessResponse:
     return mock_businesses[business_id]
 
 
+@router.get("/public/{public_slug}", response_model=BusinessResponse)
+async def get_public_business(public_slug: str) -> BusinessResponse:
+    """Return a published listing for its public profile page."""
+    for business in mock_businesses.values():
+        if business.public_slug == public_slug and business.published:
+            return business
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND, detail="Published listing not found"
+    )
+
+
 @router.post("/", response_model=BusinessResponse, status_code=status.HTTP_201_CREATED)
 async def create_business(business: BusinessCreate) -> BusinessResponse:
     """Create a new business listing with optional SEO keywords and plan options."""
     global next_id
-    new_business = BusinessResponse(id=next_id, **business.model_dump())
+    new_business = BusinessResponse(
+        id=next_id,
+        public_slug=make_slug(business.name, next_id),
+        **business.model_dump(),
+    )
     next_id += 1
     mock_businesses[new_business.id] = new_business
     return new_business

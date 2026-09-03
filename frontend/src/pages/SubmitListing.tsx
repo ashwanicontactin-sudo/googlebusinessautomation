@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/submit.css";
 
 export default function SubmitListing() {
+  const navigate = useNavigate();
   const [categories] = useState<string[]>(["Restaurant", "Retail", "Services", "Healthcare", "Professional"]);
   const [keywords, setKeywords] = useState<string[]>([]);
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
@@ -80,7 +82,10 @@ export default function SubmitListing() {
         body: JSON.stringify({ business_id: data.id, platform }),
       }))
       .then((res) => res.json())
-      .then((data) => alert(`Listing created for ${data.platform}: ${data.status}`))
+      .then((data) => {
+        alert(`Listing created for ${data.platform}: ${data.status}`);
+        navigate(`/listing/${data.public_slug}`);
+      })
       .catch(console.error);
   };
 
