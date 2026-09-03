@@ -73,13 +73,16 @@ export default function SubmitListing() {
     };
 
     setSubmitMessage("Saving your listing...");
-    fetch("/api/v1/businesses", {
+    fetch("/api/v1/businesses/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     })
       .then(async (res) => {
-        if (!res.ok) throw new Error("Business details could not be saved.");
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}));
+          throw new Error(body.detail || "Business details could not be saved.");
+        }
         return res.json();
       })
       .then((business) => fetch("/api/v1/listings/submit", {
