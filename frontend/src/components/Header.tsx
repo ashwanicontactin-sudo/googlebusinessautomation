@@ -10,6 +10,7 @@ const navLinks = [
   { to: "/analytics", label: "Analytics" },
   { to: "/analytics/config", label: "Ad Integrations" },
   { to: "/submit", label: "Submit Listing" },
+  { to: "/pricing", label: "Plans" },
   { to: "/login", label: "Login" },
 ];
 

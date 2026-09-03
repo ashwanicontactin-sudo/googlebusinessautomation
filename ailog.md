@@ -135,3 +135,4 @@ This file tracks AI-assisted development decisions, model interactions, and lear
 - Fixed Vite API proxy configuration and dynamic FastAPI route collisions that caused data pages to appear empty.
 - Confirmed the project uses SQLAlchemy/PostgreSQL configuration; Prisma and Supabase are not installed or required.
 - Added baseline API security headers and explicit CORS method/header allowlists.
+- Added transparent low-cost plan catalog and a payment-provider-neutral checkout placeholder.

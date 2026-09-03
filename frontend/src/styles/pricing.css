@@ -1,0 +1,8 @@
+.win95-pricing { max-width: 980px; margin: 0 auto; }
+.win95-pricing-email { max-width: 420px; margin: 1rem 0; display: grid; gap: .4rem; }
+.win95-plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.win95-plan-card { padding: 1rem; border: 3px ridge #c0c0c0; background: #fff; min-height: 290px; display: flex; flex-direction: column; gap: .75rem; }
+.win95-plan-card h3 { margin: -1rem -1rem 0; padding: .3rem .5rem; font-size: .9rem; }
+.win95-plan-price { font-size: 2rem; }
+.win95-plan-price small { font-size: .9rem; font-weight: 400; }
+.win95-plan-card ul { padding-left: 1.2rem; flex: 1; }

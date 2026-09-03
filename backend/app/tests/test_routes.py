@@ -82,3 +82,18 @@ class TestListingRoutes:
         )
         assert response.status_code == 201
         assert response.json()["platform"] == "apple"
+
+
+class TestBillingRoutes:
+    def test_plans_and_checkout(self) -> None:
+        client = TestClient(app)
+        plans = client.get("/api/v1/billing/plans")
+        assert plans.status_code == 200
+        assert plans.json()["plans"][1]["price"] == 9
+
+        checkout = client.post(
+            "/api/v1/billing/checkout",
+            json={"plan_tier": "premium", "email": "owner@example.com"},
+        )
+        assert checkout.status_code == 200
+        assert checkout.json()["status"] == "checkout_pending"

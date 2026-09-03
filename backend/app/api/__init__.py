@@ -10,6 +10,7 @@ from app.api.auth import router as auth_router
 from app.api.ads import router as ads_router
 from app.api.analytics import router as analytics_router
 from app.api.media import router as media_router
+from app.api.billing import router as billing_router
 
 router = APIRouter()
 
@@ -20,3 +21,4 @@ router.include_router(listings_router, prefix="/listings", tags=["listings"])
 router.include_router(ads_router, prefix="/ads", tags=["ads"])
 router.include_router(analytics_router, prefix="/analytics", tags=["analytics"])
 router.include_router(media_router, prefix="/media", tags=["media"])
+router.include_router(billing_router, prefix="/billing", tags=["billing"])
