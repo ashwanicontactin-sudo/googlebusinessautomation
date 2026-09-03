@@ -36,6 +36,7 @@ export default function Businesses() {
               <th>Phone</th>
               <th>Media</th>
               <th>Public listing</th>
+              <th>Customize</th>
             </tr>
           </thead>
           <tbody>
@@ -59,6 +60,7 @@ export default function Businesses() {
                 <td>
                   {b.public_slug ? <a href={`/listing/${b.public_slug}`} className="win95-button-small">Open listing</a> : "-"}
                 </td>
+                <td><a href={`/businesses/${b.id}/edit`} className="win95-button-small">Edit</a></td>
               </tr>
             ))}
           </tbody>

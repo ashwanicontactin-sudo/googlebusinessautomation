@@ -136,3 +136,4 @@ This file tracks AI-assisted development decisions, model interactions, and lear
 - Confirmed the project uses SQLAlchemy/PostgreSQL configuration; Prisma and Supabase are not installed or required.
 - Added baseline API security headers and explicit CORS method/header allowlists.
 - Added transparent low-cost plan catalog and a payment-provider-neutral checkout placeholder.
+- Fixed the submit chain to use the created business slug, added owner customization, and verified the create/queue/public-profile flow end to end.

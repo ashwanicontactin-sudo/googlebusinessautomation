@@ -12,6 +12,7 @@ import HtmlAdBuilder from "./pages/HtmlAdBuilder";
 import MediaGallery from "./components/MediaGallery";
 import PublicListing from "./pages/PublicListing";
 import Pricing from "./pages/Pricing";
+import EditBusiness from "./pages/EditBusiness";
 import "./styles/app.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/businesses" element={<Businesses />} />
         <Route path="/businesses/:businessId/media" element={<BusinessMedia />} />
+        <Route path="/businesses/:businessId/edit" element={<EditBusiness />} />
         <Route path="/listing/:slug" element={<PublicListing />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/platforms" element={<Platforms />} />

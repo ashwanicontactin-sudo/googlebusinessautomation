@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added business-owner and developer account types plus logo customization in listing setup.
 - Added API security response headers and restrictive CORS allowlists.
 - Added Plans page with Free, Premium, and Enterprise pricing plus checkout status flow.
+- Fixed listing submit redirect and added a separate listing customization page.
+- Added Vite proxy and route validation fixes so API-backed pages load their content.
 
 ### Added
 - Google OAuth and Meta OAuth entry points for Facebook/Instagram sign-in.
