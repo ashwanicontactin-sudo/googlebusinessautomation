@@ -25,6 +25,7 @@ export default function SubmitListing() {
     website: "",
     category: "",
     plan_tier: "free",
+    logo_url: "",
   });
 
   useEffect(() => {
@@ -118,6 +119,7 @@ export default function SubmitListing() {
           <div className="win95-form-row"><label className="win95-label">SEO-Optimized Description (min 50 words)</label><textarea name="description_seo" value={seoDescription} onChange={(e) => { setSeoDescription(e.target.value); setWordCount(e.target.value.trim().split(/\s+/).filter(Boolean).length); }} className="win95-textarea" rows={4} /><span className="win95-word-count">{wordCount} words</span></div>
           <div className="win95-form-row"><label className="win95-label">Category</label><select name="category" value={formData.category} onChange={handleChange} className="win95-select"><option value="">Select a category</option>{categories.map((cat) => <option key={cat} value={cat}>{cat}</option>)}</select></div>
           <div className="win95-form-row"><label className="win95-label">Plan Tier</label><select name="plan_tier" value={formData.plan_tier} onChange={handleChange} className="win95-select"><option value="free">Free (Basic listing)</option><option value="premium">Premium ($15/month)</option><option value="enterprise">Enterprise ($49/month)</option></select></div>
+          <div className="win95-form-row"><label className="win95-label">Logo URL (optional)</label><input type="url" name="logo_url" value={formData.logo_url} onChange={handleChange} className="win95-input" placeholder="https://example.com/logo.png" /></div>
           <div className="win95-form-row"><label className="win95-label">SEO Keywords</label><div className="win95-keyword-selector">{keywords.slice(0, 10).map((kw) => <button key={kw} type="button" className={`win95-keyword-chip ${selectedKeywords.includes(kw) ? "selected" : ""}`} onClick={() => handleKeywordToggle(kw)}>{kw}</button>)}</div><div className="win95-form-row-inline"><input type="text" value={keywordInput} onChange={(e) => setKeywordInput(e.target.value)} className="win95-input" placeholder="Custom keyword..." /><button type="button" onClick={addCustomKeyword} className="win95-button-small">Add</button></div></div>
         </fieldset>
         <fieldset hidden={currentStep !== 4}><legend>Publish listing</legend>

@@ -128,3 +128,4 @@ This file tracks AI-assisted development decisions, model interactions, and lear
 - Changed the listing workflow to publish each business on this platform first.
 - Added stable public slugs and `/listing/:slug` profile pages with contact, location, logo, and SEO content.
 - Kept external directories as optional distribution channels rather than the primary destination.
+- Added separate business-owner and developer onboarding choices and optional listing logo input.

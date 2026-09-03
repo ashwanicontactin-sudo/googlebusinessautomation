@@ -15,6 +15,7 @@ class LoginRequest(BaseModel):
 
 class RegisterRequest(LoginRequest):
     email: str | None = None
+    account_type: str = "business_owner"
 
 
 class TokenResponse(BaseModel):
@@ -72,4 +73,6 @@ async def login(credentials: LoginRequest) -> TokenResponse:
 )
 async def register(credentials: RegisterRequest) -> TokenResponse:
     """Register a new user account."""
+    if credentials.account_type not in {"business_owner", "developer"}:
+        raise HTTPException(status_code=400, detail="Invalid account type")
     return TokenResponse(access_token="dummy-token", token_type="bearer")

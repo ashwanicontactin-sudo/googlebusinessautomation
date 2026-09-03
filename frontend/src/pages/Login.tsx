@@ -6,6 +6,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [accountType, setAccountType] = useState("business_owner");
 
   const startSocialLogin = (provider: "google" | "meta") => {
     fetch(`/api/v1/auth/oauth/${provider}`)
@@ -22,7 +23,7 @@ export default function Login() {
     fetch(`/api/v1/auth/${isRegistering ? "register" : "login"}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password, ...(isRegistering ? { email } : {}) }),
+      body: JSON.stringify({ username, password, ...(isRegistering ? { email, account_type: accountType } : {}) }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -44,6 +45,15 @@ export default function Login() {
           <div className="win95-form-row">
             <label className="win95-label">Email</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="win95-input" required />
+          </div>
+        )}
+        {isRegistering && (
+          <div className="win95-form-row">
+            <label className="win95-label">Account type</label>
+            <select value={accountType} onChange={(e) => setAccountType(e.target.value)} className="win95-select">
+              <option value="business_owner">Business owner (no coding required)</option>
+              <option value="developer">Developer (API and integrations)</option>
+            </select>
           </div>
         )}
         <div className="win95-form-row">
