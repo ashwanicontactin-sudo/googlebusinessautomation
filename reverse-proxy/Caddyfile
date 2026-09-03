@@ -1,0 +1,46 @@
+# Caddyfile for Business Listing Platform
+# Caddy is an open-source reverse proxy with automatic HTTPS
+# See: https://caddyserver.com/docs/
+
+{
+    # Global options
+    email you@example.com
+    auto_https on
+}
+
+# Main site - HTTPS with automatic TLS
+https://business-listing-platform.com {
+    # Security headers
+    header {
+        Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        X-XSS-Protection "1; mode=block"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.openstreetmap.org; connect-src 'self' ws: wss:; font-src 'self' https:;"
+        Permissions-Policy "geolocation=(), camera=(), microphone=()"
+    }
+
+    # Rate limiting for API endpoints
+    @api {
+        path /api/*
+    }
+    rate_limit @api 10r/s 50r burst
+
+    @auth {
+        path /api/v1/auth/*
+    }
+    rate_limit @auth 5r/m 20r burst
+
+    # Proxy to frontend
+    file_server
+
+    # Reverse proxy API requests to backend
+    reverse_proxy /api/* backend:8000
+
+    # Health check
+    handle /health {
+        reverse_proxy backend:8000/health
+        header Cache-Control "no-store, no-cache, must-revalidate"
+    }
+}

@@ -1,0 +1,43 @@
+.win95-main {
+  padding: 1rem;
+  min-height: calc(100vh - 120px);
+}
+
+.win95-home {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.win95-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.win95-feature-card {
+  padding: 1rem;
+  min-height: 150px;
+}
+
+.win95-feature-card h3 {
+  margin: -1rem -1rem 0.5rem -1rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.win95-actions {
+  margin: 2rem 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.win95-section {
+  margin: 1.5rem 0;
+}
+
+.win95-map-container {
+  margin-top: 0.5rem;
+  height: 400px;
+}

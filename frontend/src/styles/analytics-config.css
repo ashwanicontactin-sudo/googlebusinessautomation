@@ -1,0 +1,30 @@
+.win95-analytics-config {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.win95-platform-list {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.win95-platform-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border: 2px solid var(--win95-border-outer);
+  background: var(--win95-window-bg);
+}
+
+.win95-platform-name {
+  font-weight: bold;
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.win95-status-available {
+  color: #008800;
+  font-weight: bold;
+  font-family: 'MS Sans Serif', sans-serif;
+}

@@ -1,0 +1,181 @@
+.win95-window {
+  background: var(--win95-window-bg);
+  border: 2px solid var(--win95-border-outer);
+  box-shadow: inset 1px 1px 0 var(--win95-border-inner);
+  padding: 1rem;
+  position: relative;
+}
+
+.win95-window::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--win95-border-inner);
+  pointer-events: none;
+}
+
+.win95-window::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid var(--win95-border-outer);
+  pointer-events: none;
+}
+
+.win95-title-bar {
+  background: var(--win95-title-bar-bg);
+  color: var(--win95-title-bar-text);
+  padding: 0.25rem 0.5rem;
+  font-weight: bold;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 0.85rem;
+  border: 1px solid var(--win95-border-outer);
+  border-bottom: 2px solid var(--win95-border-outer);
+  margin: -1rem -1rem 0.5rem -1rem;
+  position: relative;
+  left: -1rem;
+  width: calc(100% + 2rem);
+}
+
+.win95-title-bar-left {
+  display: flex;
+  align-items: center;
+}
+
+.win95-title {
+  color: var(--win95-title-bar-text);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.win95-title-text {
+  color: var(--win95-text);
+  font-size: 1.5rem;
+  font-family: 'MS Sans Serif', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.win95-subtitle {
+  color: var(--win95-subtitle);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.win95-button {
+  background: var(--win95-button-bg);
+  border: 2px solid var(--win95-border-outer);
+  padding: 0.35rem 0.75rem;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-weight: bold;
+  color: var(--win95-text);
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0.25rem;
+  transition: none;
+}
+
+.win95-button:active {
+  background: var(--win95-button-light);
+  border: 2px solid var(--win95-button-dark);
+}
+
+.win95-button:hover {
+  background: var(--win95-button-light);
+  border: 2px solid var(--win95-button-dark);
+}
+
+.win95-input {
+  background: var(--win95-input-bg);
+  border: 2px solid var(--win95-border-outer);
+  border-top: 1px solid var(--win95-border-inner);
+  padding: 0.25rem;
+  font-family: 'MS Sans Serif', sans-serif;
+  width: 100%;
+}
+
+.win95-select {
+  background: var(--win95-input-bg);
+  border: 2px solid var(--win95-border-outer);
+  border-top: 1px solid var(--win95-border-inner);
+  padding: 0.25rem;
+  font-family: 'MS Sans Serif', sans-serif;
+  width: 100%;
+}
+
+.win95-textarea {
+  background: var(--win95-input-bg);
+  border: 2px solid var(--win95-border-outer);
+  border-top: 1px solid var(--win95-border-inner);
+  padding: 0.25rem;
+  font-family: 'MS Sans Serif', sans-serif;
+  width: 100%;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.win95-label {
+  font-family: 'MS Sans Serif', sans-serif;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.win95-menu-bar {
+  display: flex;
+  gap: 1rem;
+  padding: 0.15rem 0.5rem;
+  background: var(--win95-button-bg);
+  border: 1px solid var(--win95-border-outer);
+  margin-bottom: 1rem;
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.win95-menu-item {
+  color: var(--win95-text);
+  text-decoration: none;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-weight: bold;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid transparent;
+}
+
+.win95-menu-item:hover {
+  background: var(--win95-button-dark);
+  color: var(--win95-button-light);
+}
+
+.win95-status-bar {
+  background: var(--win95-button-bg);
+  border: 2px solid var(--win95-border-outer);
+  border-top: 1px solid var(--win95-border-inner);
+  padding: 0.25rem 0.5rem;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.win95-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.win95-table th,
+.win95-table td {
+  border: 1px solid var(--win95-border-outer);
+  padding: 0.25rem 0.5rem;
+}
+
+.win95-table th {
+  background: var(--win95-title-bar-bg);
+  color: var(--win95-title-bar-text);
+}

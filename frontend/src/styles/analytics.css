@@ -1,0 +1,55 @@
+.win95-analytics {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.win95-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.win95-stat-card {
+  border: 2px solid var(--win95-border-outer);
+  padding: 1rem;
+  text-align: center;
+  background: var(--win95-window-bg);
+}
+
+.win95-stat-card h3 {
+  margin-bottom: 0.5rem;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 0.9rem;
+  color: var(--win95-text);
+}
+
+.win95-stat-value {
+  font-size: 1.75rem;
+  font-weight: bold;
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.win95-badge-paid {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.win95-badge-free {
+  color: #0000ff;
+  font-weight: bold;
+}
+
+.win95-map-wrapper {
+  margin: 1.5rem 0;
+}
+
+.win95-map-container {
+  margin: 1rem 0;
+}
+
+.win95-map {
+  border: 2px solid var(--win95-border-outer);
+  padding: 0.5rem;
+  background: var(--win95-window-bg);
+}

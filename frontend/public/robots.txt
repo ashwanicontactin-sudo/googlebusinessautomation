@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://business-listing-platform.com/sitemap.xml

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=MS+Sans+Serif&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --win95-bg: #c0c0c0;
+  --win95-border-inner: #fff;
+  --win95-border-outer: #000;
+  --win95-title-bar-bg: #0a246a;
+  --win95-title-bar-text: #fff;
+  --win95-window-bg: #fff;
+  --win95-input-bg: #fff;
+  --win95-button-bg: #c0c0c0;
+  --win95-button-light: #fff;
+  --win95-button-dark: #808080;
+  --win95-text: #000;
+  --win95-subtitle: #444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'MS Sans Serif', sans-serif;
+  background: var(--win95-bg);
+  color: var(--win95-text);
+  min-height: 100vh;
+}

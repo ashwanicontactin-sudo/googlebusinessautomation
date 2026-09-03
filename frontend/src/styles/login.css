@@ -1,0 +1,18 @@
+.win95-login {
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.win95-form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.win95-social-login {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--win95-button-dark);
+}

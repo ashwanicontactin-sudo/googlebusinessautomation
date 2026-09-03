@@ -1,0 +1,12 @@
+version: 2
+ignore:
+  paths:
+    - node_modules
+    - .venv
+    - venv
+    - __pycache__
+    - .git
+    - uploads
+    - dist
+    - build
+  generatePatches: false

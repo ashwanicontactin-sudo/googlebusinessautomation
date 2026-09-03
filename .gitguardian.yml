@@ -1,0 +1,14 @@
+version: 2
+
+# GitGuardian configuration for secret scanning
+# Run: ggshield auth login (to authenticate)
+# Then: ggshield secret scan path .
+
+# Patterns to detect:
+# - Secret API keys (Google, Bing Maps, AWS, etc.)
+# - Database passwords in code
+# - JWT tokens
+# - SSH private keys
+
+# Scan patterns
+# - All Python, TypeScript, JavaScript, and config files

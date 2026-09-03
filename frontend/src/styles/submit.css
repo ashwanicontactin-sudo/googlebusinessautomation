@@ -1,0 +1,93 @@
+.win95-submit {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.win95-form {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.win95-step-indicator {
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  background: var(--win95-title-bar-bg);
+  color: var(--win95-title-bar-text);
+  border: 2px solid var(--win95-border-outer);
+  font-weight: 700;
+}
+
+.win95-form fieldset {
+  min-width: 0;
+  padding: 0.75rem;
+  border: 2px groove var(--win95-bg);
+}
+
+.win95-form legend {
+  padding: 0 0.35rem;
+  font-weight: 700;
+}
+
+.win95-form-row {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.win95-form-row-inline {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.win95-form-group {
+  flex: 1;
+  min-width: 150px;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.win95-form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.win95-word-count {
+  font-size: 0.8rem;
+  color: var(--win95-subtitle);
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.win95-keyword-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+.win95-keyword-chip {
+  background: var(--win95-button-bg);
+  border: 2px solid var(--win95-border-outer);
+  padding: 0.2rem 0.5rem;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin: 0.1rem;
+}
+
+.win95-keyword-chip.selected,
+.win95-keyword-chip:hover {
+  background: var(--win95-button-dark);
+  color: var(--win95-button-light);
+}
+
+.win95-keyword-tag {
+  background: var(--win95-title-bar-bg);
+  color: var(--win95-title-bar-text);
+  padding: 0.15rem 0.5rem;
+  font-size: 0.8rem;
+  font-family: 'MS Sans Serif', sans-serif;
+  display: inline-block;
+  margin: 0.1rem;
+}

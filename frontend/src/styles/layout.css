@@ -1,0 +1,14 @@
+.win95-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--win95-bg);
+}
+
+.win95-app-window {
+  background: var(--win95-window-bg);
+  border: 2px solid var(--win95-border-outer);
+  border-top: none;
+  min-height: calc(100vh - 40px);
+  margin: 0 1rem;
+}

@@ -1,0 +1,24 @@
+# Snyk configuration for Business Listing Platform
+# Used to scan for vulnerabilities in dependencies
+
+# Organization ID (set in CI)
+# org: business-listing-platform
+
+# Files to scan
+# - backend/requirements.txt
+# - frontend/package.json
+
+# Exclude paths
+exclude-path: node_modules/**
+exclude-path: "**/.venv/**"
+exclude-path: "**/{.git,uploads,.cache}/**"
+
+# Security rules
+# - Code injection: prevent
+# - Hardcoded secrets: detect
+# - Insecure deserialization: prevent
+# - XSS (cross-site scripting): prevent
+# - SQL injection: prevent
+
+# Severity threshold
+severity-threshold: medium

@@ -1,0 +1,9 @@
+.win95-businesses {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.win95-table-container {
+  margin-top: 1rem;
+  overflow-x: auto;
+}

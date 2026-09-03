@@ -1,0 +1,67 @@
+.win95-media-gallery {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.win95-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.win95-media-item {
+  border: 2px solid var(--win95-border-outer);
+  padding: 0.25rem;
+  background: var(--win95-window-bg);
+  position: relative;
+}
+
+.win95-media-img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.win95-media-video {
+  width: 100%;
+  max-height: 180px;
+}
+
+.win95-media-caption {
+  display: block;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.win95-checkbox-container {
+  display: flex;
+  align-items: center;
+  font-family: 'MS Sans Serif', sans-serif;
+  cursor: pointer;
+  user-select: none;
+}
+
+.win95-checkbox-container input {
+  margin-right: 0.5rem;
+  width: 16px;
+  height: 16px;
+}
+
+.win95-html-ad-builder {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.win95-code-block {
+  background: #000;
+  color: #0f0;
+  padding: 0.75rem;
+  border: 2px solid var(--win95-border-outer);
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
